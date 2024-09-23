@@ -33,18 +33,25 @@ document
   .addEventListener("click", function () {
     const feniInputField = getInputValueById("feni-input-field");
     const feniDonateAmount = getTextValueById("feni-donate-amount");
-
+    if (isNaN(feniInputField) || feniInputField <= 0) {
+      alert("Invalid Donate Amount, Please Enter Valid Amount");
+      return;
+    }
     const mainAccountBalanceEl = getTextValueById("main-account-balance");
+    if (mainAccountBalanceEl < feniInputField) {
+      alert("you Do Not Have Enough Balance please REcharge Your Account");
+      return;
+    } else {
+      const feniTotalDonateAmount = feniDonateAmount + feniInputField;
+      document.getElementById("feni-donate-amount").innerText =
+        feniTotalDonateAmount;
 
-    const feniTotalDonateAmount = feniDonateAmount + feniInputField;
-    document.getElementById("feni-donate-amount").innerText =
-      feniTotalDonateAmount;
+      const mainAccountBalance = mainAccountBalanceEl - feniInputField;
+      document.getElementById("main-account-balance").innerText =
+        mainAccountBalance;
 
-    const mainAccountBalance = mainAccountBalanceEl - feniInputField;
-    document.getElementById("main-account-balance").innerText =
-      mainAccountBalance;
-
-    document.getElementById("feni-input-field").value = "";
+      document.getElementById("feni-input-field").value = "";
+    }
   });
 
 // Injured Donate
@@ -55,13 +62,22 @@ document
     const injuredDonateAmount = getTextValueById("injured-donate-amount");
     const mainAccountBalanceEl = getTextValueById("main-account-balance");
 
-    const injuredTotalDonateAmount = injuredDonateAmount + injuredInputField;
-    document.getElementById("injured-donate-amount").innerText =
-      injuredTotalDonateAmount;
+    if (isNaN(injuredInputField) || injuredInputField <= 0) {
+      alert("Invalid Donate Amount, Please Enter Valid Amount");
+      return;
+    }
+    if (mainAccountBalanceEl < injuredInputField) {
+      alert("you Do Not Have Enough Balance please REcharge Your Account");
+      return;
+    } else {
+      const injuredTotalDonateAmount = injuredDonateAmount + injuredInputField;
+      document.getElementById("injured-donate-amount").innerText =
+        injuredTotalDonateAmount;
 
-    const mainAccountBalance = mainAccountBalanceEl - injuredInputField;
-    document.getElementById("main-account-balance").innerText =
-      mainAccountBalance;
+      const mainAccountBalance = mainAccountBalanceEl - injuredInputField;
+      document.getElementById("main-account-balance").innerText =
+        mainAccountBalance;
 
-    document.getElementById("injured-input-field").value = "";
+      document.getElementById("injured-input-field").value = "";
+    }
   });
