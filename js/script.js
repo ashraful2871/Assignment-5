@@ -1,3 +1,50 @@
+//Palestine
+document
+  .getElementById("btn-donate-palestine")
+  .addEventListener("click", function () {
+    const palestineDonateAmount = getTextValueById("palestine-donate-amount");
+
+    const palestineInputField = getInputValueById("palestine-input-field");
+    if (isNaN(palestineInputField) || palestineInputField <= 0) {
+      alert("Invalid Donate Amount, Please Enter Valid Amount");
+      return;
+    }
+    const mainAccountBalanceEl = getTextValueById("main-account-balance");
+    if (mainAccountBalanceEl < palestineInputField) {
+      alert("you Do Not Have Enough Balance please REcharge Your Account");
+      return;
+    } else {
+      const palestineTotalDonateAmount =
+        palestineDonateAmount + palestineInputField;
+      document.getElementById("palestine-donate-amount").innerText =
+        palestineTotalDonateAmount;
+
+      const mainAccountBalance = mainAccountBalanceEl - palestineInputField;
+      document.getElementById("main-account-balance").innerText =
+        mainAccountBalance;
+
+      document.getElementById("palestine-input-field").value = "";
+
+      const div = document.createElement("div");
+      div.classList.add(
+        "card-body",
+        "shadow-lg",
+        "mb-5",
+        "border-4",
+        "rounded-2xl"
+      );
+      div.innerHTML = `
+      <span class="font-extrabold text-center text-2xl pb-4 text-lime-700">Donated Palestine</span>
+      <h2 class="text-center font-semibold text-xl">$ ${palestineInputField} USD is Donated to Starving Children in Gaza, Palestine. Your Current Account Balance: $ ${mainAccountBalance} USD.</h2>
+                <p class="text-center">Date: ${new Date().toLocaleDateString()} at Time: ${new Date().toLocaleTimeString()}</p>`;
+      document.getElementById("history-container").appendChild(div);
+    }
+
+    //open modal
+    const modal = document.getElementById("my_modal_5");
+    modal.showModal();
+  });
+
 // Noakhali Donate
 document
   .getElementById("btn-donate-noakhali")
@@ -24,6 +71,20 @@ document
         mainAccountBalance;
 
       document.getElementById("noakhali-input-field").value = "";
+
+      const div = document.createElement("div");
+      div.classList.add(
+        "card-body",
+        "shadow-lg",
+        "mb-5",
+        "border-4",
+        "rounded-2xl"
+      );
+      div.innerHTML = `
+      <span class="font-extrabold text-center text-2xl pb-4 text-lime-700">Donated Noakhali</span>
+      <h2 class="text-center font-semibold text-xl">$ ${noakhaliInputField} USD is Donated for famine-2024 at Noakhali, Bangladesh. Your Current Account Balance: $ ${mainAccountBalance} USD.</h2>
+                <p class="text-center">Date: ${new Date().toLocaleDateString()} at Time: ${new Date().toLocaleTimeString()}</p>`;
+      document.getElementById("history-container").appendChild(div);
     }
 
     //open modal
@@ -55,6 +116,20 @@ document
         mainAccountBalance;
 
       document.getElementById("feni-input-field").value = "";
+
+      const div = document.createElement("div");
+      div.classList.add(
+        "card-body",
+        "shadow-lg",
+        "mb-5",
+        "border-4",
+        "rounded-2xl"
+      );
+      div.innerHTML = `
+      <span class="font-extrabold text-center text-2xl pb-4 text-lime-700">Donated Feni</span>
+      <h2 class="text-center font-semibold text-xl">$ ${feniInputField} USD is Donated for Flood Relief in Feni,Bangladesh. Your Current Account Balance: $ ${mainAccountBalance} USD.</h2>
+                <p class="text-center">Date: ${new Date().toLocaleDateString()} at Time: ${new Date().toLocaleTimeString()}</p>`;
+      document.getElementById("history-container").appendChild(div);
     }
 
     //open modal
@@ -87,6 +162,22 @@ document
         mainAccountBalance;
 
       document.getElementById("injured-input-field").value = "";
+
+      const div = document.createElement("div");
+      div.classList.add(
+        "card-body",
+        "shadow-lg",
+        "mb-5",
+        "border-4",
+        "rounded-2xl"
+      );
+      div.innerHTML = `
+      <span class="font-extrabold text-center text-2xl pb-4 text-lime-700">Donated Injured People</span>
+
+      <h2 class="text-center font-semibold text-xl">$ ${injuredInputField} USD is Donated for Aid for Injured in the Quota Movement, Bangladesh. Your Current Account Balance: $ ${mainAccountBalance} USD.</h2>
+
+                <p class="text-center">Date: ${new Date().toLocaleDateString()} at Time: ${new Date().toLocaleTimeString()}</p>`;
+      document.getElementById("history-container").appendChild(div);
     }
 
     //open modal
