@@ -2,17 +2,29 @@
 document
   .getElementById("btn-donate-noakhali")
   .addEventListener("click", function () {
-    const noakhaliInputField = getInputValueById("noakhali-input-field");
     const noakhaliDonateAmount = getTextValueById("noakhali-donate-amount");
+
+    const noakhaliInputField = getInputValueById("noakhali-input-field");
+    if (isNaN(noakhaliInputField) || noakhaliInputField <= 0) {
+      alert("Invalid Donate Amount, Please Enter Valid Amount");
+      return;
+    }
     const mainAccountBalanceEl = getTextValueById("main-account-balance");
+    if (mainAccountBalanceEl < noakhaliInputField) {
+      alert("you Do Not Have Enough Balance please REcharge Your Account");
+      return;
+    } else {
+      const noakhaliTotalDonateAmount =
+        noakhaliDonateAmount + noakhaliInputField;
+      document.getElementById("noakhali-donate-amount").innerText =
+        noakhaliTotalDonateAmount;
 
-    const noakhaliTotalDonateAmount = noakhaliDonateAmount + noakhaliInputField;
-    document.getElementById("noakhali-donate-amount").innerText =
-      noakhaliTotalDonateAmount;
+      const mainAccountBalance = mainAccountBalanceEl - noakhaliInputField;
+      document.getElementById("main-account-balance").innerText =
+        mainAccountBalance;
 
-    const mainAccountBalance = mainAccountBalanceEl - noakhaliInputField;
-    document.getElementById("main-account-balance").innerText =
-      mainAccountBalance;
+      document.getElementById("noakhali-input-field").value = "";
+    }
   });
 
 // Feni Donate
@@ -21,6 +33,7 @@ document
   .addEventListener("click", function () {
     const feniInputField = getInputValueById("feni-input-field");
     const feniDonateAmount = getTextValueById("feni-donate-amount");
+
     const mainAccountBalanceEl = getTextValueById("main-account-balance");
 
     const feniTotalDonateAmount = feniDonateAmount + feniInputField;
@@ -30,10 +43,11 @@ document
     const mainAccountBalance = mainAccountBalanceEl - feniInputField;
     document.getElementById("main-account-balance").innerText =
       mainAccountBalance;
+
+    document.getElementById("feni-input-field").value = "";
   });
 
 // Injured Donate
-
 document
   .getElementById("btn-donate-injured")
   .addEventListener("click", function () {
@@ -48,4 +62,6 @@ document
     const mainAccountBalance = mainAccountBalanceEl - injuredInputField;
     document.getElementById("main-account-balance").innerText =
       mainAccountBalance;
+
+    document.getElementById("injured-input-field").value = "";
   });
