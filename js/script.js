@@ -25,6 +25,10 @@ document
 
       document.getElementById("noakhali-input-field").value = "";
     }
+
+    //open modal
+    const modal = document.getElementById("my_modal_5");
+    modal.showModal();
   });
 
 // Feni Donate
@@ -52,6 +56,10 @@ document
 
       document.getElementById("feni-input-field").value = "";
     }
+
+    //open modal
+    const modal = document.getElementById("my_modal_5");
+    modal.showModal();
   });
 
 // Injured Donate
@@ -80,4 +88,26 @@ document
 
       document.getElementById("injured-input-field").value = "";
     }
+
+    //open modal
+    const modal = document.getElementById("my_modal_5");
+    modal.showModal();
+  });
+
+// Show History Section
+document.getElementById("btn-history").addEventListener("click", function () {
+  showFunctionById("history-container");
+
+  document.getElementById("btn-history").classList.add("bg-lime-400");
+  document.getElementById("btn-donate").classList.remove("bg-[#B4F461]");
+});
+
+// show Donate Container
+document
+  .getElementById("btn-donate")
+  .addEventListener("click", function (event) {
+    showFunctionById("donate-container");
+
+    document.getElementById("btn-history").classList.remove("bg-lime-400");
+    document.getElementById("btn-donate").classList.add("bg-[#B4F461]");
   });
