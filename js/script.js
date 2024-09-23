@@ -25,6 +25,9 @@ document
 
       document.getElementById("palestine-input-field").value = "";
 
+      const noHistoryEl = document.getElementById("no-history");
+      noHistoryEl.classList.add("hidden");
+
       const div = document.createElement("div");
       div.classList.add(
         "card-body",
@@ -72,6 +75,9 @@ document
 
       document.getElementById("noakhali-input-field").value = "";
 
+      const noHistoryEl = document.getElementById("no-history");
+      noHistoryEl.classList.add("hidden");
+
       const div = document.createElement("div");
       div.classList.add(
         "card-body",
@@ -116,6 +122,9 @@ document
         mainAccountBalance;
 
       document.getElementById("feni-input-field").value = "";
+
+      const noHistoryEl = document.getElementById("no-history");
+      noHistoryEl.classList.add("hidden");
 
       const div = document.createElement("div");
       div.classList.add(
@@ -162,6 +171,9 @@ document
         mainAccountBalance;
 
       document.getElementById("injured-input-field").value = "";
+
+      const noHistoryEl = document.getElementById("no-history");
+      noHistoryEl.classList.add("hidden");
 
       const div = document.createElement("div");
       div.classList.add(
