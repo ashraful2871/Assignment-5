@@ -1,9 +1,10 @@
 //get input field value
 function getInputValueById(id) {
   const inputValue = document.getElementById(id).value;
-  if (inputValue === "") {
+  if (inputValue === "" || inputValue !== "number") {
     return inputValue;
   }
+
   const inputValueNumber = parseFloat(inputValue);
   return inputValueNumber;
 }
