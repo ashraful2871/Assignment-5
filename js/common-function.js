@@ -1,11 +1,11 @@
 //get input field value
 function getInputValueById(id) {
   const inputValue = document.getElementById(id).value;
-  if (inputValue === "" || inputValue !== "number") {
-    return inputValue;
+  if (inputValue === "" || isNaN(Number(inputValue))) {
+    return "invalid";
   }
 
-  const inputValueNumber = parseFloat(inputValue);
+  const inputValueNumber = Number(inputValue);
   return inputValueNumber;
 }
 

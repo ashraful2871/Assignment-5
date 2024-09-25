@@ -4,14 +4,10 @@ document
   .addEventListener("click", function () {
     const palestineDonateAmount = getTextValueById("palestine-donate-amount");
     const palestineInputField = getInputValueById("palestine-input-field");
-    if (palestineInputField === "") {
-      return alert("Please Enter Your Amount");
+    if (palestineInputField === "invalid" || palestineInputField <= 0) {
+      return alert("Please Enter Valid Amount");
     }
 
-    if (isNaN(palestineInputField) || palestineInputField <= 0) {
-      alert("Invalid Donate Amount, Please Enter Valid Amount");
-      return;
-    }
     const mainAccountBalanceEl = getTextValueById("main-account-balance");
     if (mainAccountBalanceEl < palestineInputField) {
       alert("you Do Not Have Enough Balance please REcharge Your Account");
@@ -57,13 +53,10 @@ document
   .addEventListener("click", function () {
     const noakhaliDonateAmount = getTextValueById("noakhali-donate-amount");
     const noakhaliInputField = getInputValueById("noakhali-input-field");
-    if (noakhaliInputField === "") {
-      return alert("Please Enter Your Amount");
+    if (noakhaliInputField === "invalid" || noakhaliInputField <= 0) {
+      return alert("Please Enter Valid Amount");
     }
-    if (isNaN(noakhaliInputField) || noakhaliInputField <= 0) {
-      alert("Invalid Donate Amount, Please Enter Valid Amount");
-      return;
-    }
+
     const mainAccountBalanceEl = getTextValueById("main-account-balance");
     if (mainAccountBalanceEl < noakhaliInputField) {
       alert("you Do Not Have Enough Balance please REcharge Your Account");
@@ -109,13 +102,10 @@ document
   .addEventListener("click", function () {
     const feniInputField = getInputValueById("feni-input-field");
     const feniDonateAmount = getTextValueById("feni-donate-amount");
-    if (feniInputField === "") {
-      return alert("Please Enter Your Amount");
+    if (feniInputField === "invalid" || feniInputField <= 0) {
+      return alert("Please Enter Valid Amount");
     }
-    if (isNaN(feniInputField) || feniInputField <= 0) {
-      alert("Invalid Donate Amount, Please Enter Valid Amount");
-      return;
-    }
+
     const mainAccountBalanceEl = getTextValueById("main-account-balance");
     if (mainAccountBalanceEl < feniInputField) {
       alert("you Do Not Have Enough Balance please REcharge Your Account");
@@ -161,13 +151,10 @@ document
     const injuredInputField = getInputValueById("injured-input-field");
     const injuredDonateAmount = getTextValueById("injured-donate-amount");
     const mainAccountBalanceEl = getTextValueById("main-account-balance");
-    if (injuredInputField === "") {
-      return alert("Please Enter Your Amount");
+    if (injuredInputField === "invalid" || injuredInputField <= 0) {
+      return alert("Please Enter Valid Amount");
     }
-    if (isNaN(injuredInputField) || injuredInputField <= 0) {
-      alert("Invalid Donate Amount, Please Enter Valid Amount");
-      return;
-    }
+
     if (mainAccountBalanceEl < injuredInputField) {
       alert("you Do Not Have Enough Balance please REcharge Your Account");
       return;
