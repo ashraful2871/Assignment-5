@@ -1,7 +1,10 @@
 //get input field value
 function getInputValueById(id) {
   const inputValue = document.getElementById(id).value;
-  if (inputValue === "" || isNaN(Number(inputValue))) {
+  if (inputValue === "") {
+    return "Amount";
+  }
+  if (isNaN(Number(inputValue))) {
     return "invalid";
   }
 

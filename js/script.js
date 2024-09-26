@@ -4,6 +4,10 @@ document
   .addEventListener("click", function () {
     const palestineDonateAmount = getTextValueById("palestine-donate-amount");
     const palestineInputField = getInputValueById("palestine-input-field");
+    if (palestineInputField === "Amount") {
+      alert("Please Enter Your Amount");
+      return;
+    }
     if (palestineInputField === "invalid" || palestineInputField <= 0) {
       return alert("Please Enter Valid Amount");
     }
@@ -53,6 +57,10 @@ document
   .addEventListener("click", function () {
     const noakhaliDonateAmount = getTextValueById("noakhali-donate-amount");
     const noakhaliInputField = getInputValueById("noakhali-input-field");
+    if (noakhaliInputField === "Amount") {
+      alert("Please Enter Your Amount");
+      return;
+    }
     if (noakhaliInputField === "invalid" || noakhaliInputField <= 0) {
       return alert("Please Enter Valid Amount");
     }
@@ -102,6 +110,10 @@ document
   .addEventListener("click", function () {
     const feniInputField = getInputValueById("feni-input-field");
     const feniDonateAmount = getTextValueById("feni-donate-amount");
+    if (feniInputField === "Amount") {
+      alert("Please Enter Your Amount");
+      return;
+    }
     if (feniInputField === "invalid" || feniInputField <= 0) {
       return alert("Please Enter Valid Amount");
     }
@@ -151,6 +163,10 @@ document
     const injuredInputField = getInputValueById("injured-input-field");
     const injuredDonateAmount = getTextValueById("injured-donate-amount");
     const mainAccountBalanceEl = getTextValueById("main-account-balance");
+    if (injuredInputField === "Amount") {
+      alert("Please Enter Your Amount");
+      return;
+    }
     if (injuredInputField === "invalid" || injuredInputField <= 0) {
       return alert("Please Enter Valid Amount");
     }
